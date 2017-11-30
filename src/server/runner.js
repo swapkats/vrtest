@@ -41,7 +41,7 @@ export default function createRunner(options: vrtest$RunnerOptions): vrtest$Runn
     events.emit('start');
 
     await driver.manage().timeouts().setScriptTimeout(60000).catch(handleError);
-    await driver.manage().window().setSize(1000, 700).catch(handleError);
+    // await driver.manage().window().setSize(1000, 700).catch(handleError);
     await driver.get(testUrl).catch(handleError);
     await setupTests(driver).catch(handleError);
     await runTests(driver, events, options, runOptions).catch(handleError);
